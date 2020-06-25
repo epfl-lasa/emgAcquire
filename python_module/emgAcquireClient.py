@@ -4,10 +4,7 @@ import sys
 import ctypes
 import numpy as np
 
-if sys.platform == 'linux':
-    lib = ctypes.cdll.LoadLibrary('../lib/linux/shared/x64/libemgAcquireClient.so')
-else:
-    lib = ctypes.cdll.LoadLibrary('..\\lib\\win32\\dll\\x64\\emgAcquireClient.dll')
+lib = ctypes.cdll.LoadLibrary('/home/ros2/ros2_ws/src/emgAcquire/lib/linux/shared/x64/libemgAcquireClient.so')
 
 class emgAcquireClient(object):
     def __init__(self, svrIP="localhost", svrPort=10352, freq=20, nb_channels=16):
